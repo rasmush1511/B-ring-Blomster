@@ -20,19 +20,44 @@ export const åbningstider = [
 
 export const kategorier = [
   {
-    slug: "foraarsblomster",
-    navn: "Forårsblomster",
-    beskrivelse: "Tulipaner, narcisser og anemoner — de første farver efter vinteren.",
+    slug: "tulipaner",
+    navn: "Tulipaner",
+    beskrivelse: "Klassiske forårstulipaner i hvid, gul, rød og lilla — enkeltblomstrede og fyldte.",
   },
   {
-    slug: "sommerblomster",
-    navn: "Sommerblomster",
-    beskrivelse: "Sommerens rigdom i potter og bundter — geranier, begoniaer og meget mere.",
+    slug: "narcisser",
+    navn: "Narcisser",
+    beskrivelse: "Gule og hvide narcisser der lukter af forår. Lange stilke, fine i buketter.",
   },
   {
-    slug: "efteraarsplanter",
-    navn: "Efterårsplanter",
-    beskrivelse: "Lyng, chrysanthemum og vintergrønt til haven og terrassen.",
+    slug: "foraarsanemoner",
+    navn: "Forårsanemoner",
+    beskrivelse: "Finbladede anemoner i klare farver — en af de første blomster fra forårsjorden.",
+  },
+  {
+    slug: "primula",
+    navn: "Primula",
+    beskrivelse: "Robuste og farverige primulaplanter klar til vindueskarmen eller haven.",
+  },
+  {
+    slug: "stedmoderblomster",
+    navn: "Stedmoderblomster",
+    beskrivelse: "Tåler kold vejr og leverer farve fra de tidligste forårsdage.",
+  },
+  {
+    slug: "hyacinter",
+    navn: "Hyacinter",
+    beskrivelse: "Stærkt duftende hyacinter i lyserød, hvid og blå — vårens velkomst.",
+  },
+  {
+    slug: "krydderurter",
+    navn: "Krydderurter",
+    beskrivelse: "Friske urter fra persille til basilikum — klar til køkken og krukke.",
+  },
+  {
+    slug: "groentsagsplanter",
+    navn: "Grøntsagsplanter",
+    beskrivelse: "Tomater, salat, squash og meget mere — klar til haven eller altankassen.",
   },
   {
     slug: "sammenplantninger",
@@ -40,19 +65,19 @@ export const kategorier = [
     beskrivelse: "Færdige arrangementer — bare sæt dem ned og nyd dem.",
   },
   {
-    slug: "krydderurter",
-    navn: "Krydderurter & grøntsagsplanter",
-    beskrivelse: "Friske urter og sunde grøntsagsplanter klar til haven.",
-  },
-  {
     slug: "buketter",
     navn: "Buketter",
-    beskrivelse: "Håndgjorte buketter af sæsonens blomster — til fest eller hverdag.",
+    beskrivelse: "Håndgjorte buketter af sæsonens blomster — til fest, gave eller hverdag.",
   },
   {
-    slug: "buske-haveplanter",
+    slug: "stauder",
+    navn: "Stauder",
+    beskrivelse: "Flerårige planter der vender tilbage år efter år og giver haven struktur.",
+  },
+  {
+    slug: "buskeOgHaveplanter",
     navn: "Buske & haveplanter",
-    beskrivelse: "Stauder, buske og roser til den permanente have.",
+    beskrivelse: "Roser, buskfyld og flerårige haveplanter til den permanente have.",
   },
 ];
 

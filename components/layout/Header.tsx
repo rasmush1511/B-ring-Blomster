@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import Container from "@/components/ui/Container";
+import LogoSvg from "@/components/ui/LogoSvg";
 import MobileNav from "./MobileNav";
-import { virksomhed } from "@/lib/data";
 
 const navLinks = [
   { href: "/", label: "Forside" },
@@ -17,44 +16,40 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-cream)]/95 backdrop-blur-sm border-b border-[var(--color-ink)]/8">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-primary)] shadow-sm">
       <Container>
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
-            aria-label={`${virksomhed.navn} — gå til forsiden`}
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-primary)]"
+            aria-label="Båring Blomster — gå til forsiden"
           >
-            {/* TODO: Udskift med rigtigt logo — se public/logo.png */}
-            <span
-              className="font-serif text-xl text-[var(--color-ink)] tracking-tight"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Båring Blomster
-            </span>
+            <LogoSvg variant="light" size="md" />
           </Link>
 
           {/* Desktop navigation */}
-          <nav
-            className="hidden md:flex items-center gap-8"
-            aria-label="Hovednavigation"
-          >
+          <nav className="hidden md:flex items-center gap-8" aria-label="Hovednavigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`link-underline text-sm transition-colors ${
+                className={`relative text-sm transition-colors ${
                   pathname === link.href
-                    ? "text-[var(--color-primary)] font-medium"
-                    : "text-[var(--color-ink)] hover:text-[var(--color-primary)]"
+                    ? "text-[var(--color-accent)]"
+                    : "text-white/85 hover:text-white"
                 }`}
               >
                 {link.label}
+                {pathname === link.href && (
+                  <span
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--color-accent)]"
+                    aria-hidden="true"
+                  />
+                )}
               </Link>
             ))}
           </nav>
 
-          {/* Mobile menu button */}
           <MobileNav />
         </div>
       </Container>

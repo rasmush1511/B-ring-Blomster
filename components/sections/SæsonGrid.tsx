@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import FadeIn from "@/components/ui/FadeIn";
-import { sæsonBilleder } from "@/lib/images";
+import { slideshowBilleder as sæsonBilleder } from "@/lib/images";
 import { getSæson, sæsonIndhold } from "@/lib/sæson";
 
 export default function SæsonGrid() {

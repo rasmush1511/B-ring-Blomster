@@ -16,26 +16,18 @@ export default function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  useEffect(() => { setOpen(false); }, [pathname]);
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-11 w-11 items-center justify-center text-[var(--color-ink)] md:hidden"
+        className="flex h-11 w-11 items-center justify-center text-white md:hidden"
         aria-label={open ? "Luk menu" : "Åbn menu"}
         aria-expanded={open}
         aria-controls="mobile-menu"
@@ -46,7 +38,7 @@ export default function MobileNav() {
       {open && (
         <div
           id="mobile-menu"
-          className="fixed inset-0 z-40 flex flex-col bg-[var(--color-cream)] pt-20"
+          className="fixed inset-0 z-40 flex flex-col bg-[var(--color-primary)] pt-16"
           role="dialog"
           aria-modal="true"
           aria-label="Navigationsmenu"
@@ -56,24 +48,23 @@ export default function MobileNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`border-b border-[var(--color-ink)]/10 py-5 font-serif text-2xl tracking-tight transition-colors ${
+                className={`border-b border-white/10 py-5 font-serif text-2xl tracking-tight transition-colors ${
                   pathname === link.href
-                    ? "text-[var(--color-primary)]"
-                    : "text-[var(--color-ink)]"
+                    ? "text-[var(--color-accent)]"
+                    : "text-white"
                 }`}
+                style={{ fontFamily: "var(--font-serif)" }}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <div className="mt-auto px-6 pb-12 text-sm text-[var(--color-muted)]">
+          <div className="mt-auto px-6 pb-12 text-sm text-white/50">
             <p>{virksomhed.adresse}</p>
-            <p>
-              {virksomhed.postnummer} {virksomhed.by}
-            </p>
+            <p>{virksomhed.postnummer} {virksomhed.by}</p>
             <a
               href={`tel:${virksomhed.telefon}`}
-              className="mt-2 block hover:text-[var(--color-primary)]"
+              className="mt-2 block hover:text-white transition-colors"
             >
               {virksomhed.telefonDisplay}
             </a>

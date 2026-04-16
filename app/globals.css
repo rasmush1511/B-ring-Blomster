@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  /* TODO: erstat --color-primary med præcis farve fra Båring Blomsters logo */
+  --color-primary: #3a5a40;
+  --color-primary-dark: #2d4632;
+  --color-cream: #f6f2ea;
+  --color-ink: #1f1f1b;
+  --color-muted: #7a7060;
+  --color-accent: #b07d5a;
+
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-cream: var(--color-cream);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-optical-sizing: auto;
+  color: var(--color-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Focus rings — tilgængelighed */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Reduceret bevægelse */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Underline-animation på links */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  width: 100%;
+}

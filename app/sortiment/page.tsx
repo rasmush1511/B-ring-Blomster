@@ -24,7 +24,7 @@ export default function Sortiment() {
         aria-labelledby="sortiment-titel"
       >
         <Container>
-          <div className="py-16 lg:py-20">
+          <div className="py-14 lg:py-20">
             <FadeIn>
               <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/60">
                 Sæsonens planter & blomster
@@ -35,7 +35,7 @@ export default function Sortiment() {
                 </h1>
                 <RoughUnderline className="mt-2" width="55%" />
               </div>
-              <p className="text-white/65 max-w-md leading-relaxed text-sm mt-3">
+              <p className="text-white/70 max-w-md leading-relaxed text-sm mt-3">
                 Sortimentet følger årstiderne. Fra de første forårsblomster til efterårslyngen — her er et overblik over hvad du normalt kan finde hos os.
               </p>
             </FadeIn>

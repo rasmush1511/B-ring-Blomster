@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Delt stil for alle ikon-bokse — ensartet orange farve og størrelse
 const iconBoxStyle: React.CSSProperties = {
   backgroundColor: "var(--color-accent)",
   color: "var(--color-secondary)",
@@ -40,7 +39,7 @@ export default function Kontakt() {
         aria-labelledby="kontakt-titel"
       >
         <Container>
-          <div className="py-16 lg:py-20">
+          <div className="py-14 lg:py-20">
             <FadeIn>
               <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/60">
                 Middelfartvej 103 · 5466 Asperup
@@ -51,7 +50,7 @@ export default function Kontakt() {
                 </h1>
                 <RoughUnderline className="mt-2" width="45%" />
               </div>
-              <p className="text-white/65 max-w-sm leading-relaxed text-sm mt-2">
+              <p className="text-white/70 max-w-sm leading-relaxed text-sm mt-2">
                 Vi er på toppen af Båring Bakke — ca. 5 minutter fra Middelfart.
               </p>
             </FadeIn>
@@ -63,14 +62,13 @@ export default function Kontakt() {
       <section className="py-14 lg:py-20 texture-white" aria-labelledby="findvej-titel">
         <Container>
           <FadeIn>
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
 
               {/* Venstre: kontaktinfo */}
               <div className="lg:col-span-5">
-                <h2 id="findvej-titel" className="mb-10">Kom forbi</h2>
+                <h2 id="findvej-titel" className="mb-8 lg:mb-10">Kom forbi</h2>
 
-                {/* Alle tre rækker med nøjagtig samme struktur og ikonboks */}
-                <ul className="space-y-8">
+                <ul className="space-y-7 sm:space-y-8">
 
                   {/* Adresse */}
                   <li className="flex items-start gap-4">
@@ -82,7 +80,7 @@ export default function Kontakt() {
                         Adresse
                       </p>
                       <address
-                        className="not-italic text-xl leading-snug text-[var(--color-secondary)]"
+                        className="not-italic text-lg leading-snug text-[var(--color-secondary)] sm:text-xl"
                         style={{ fontFamily: "var(--font-serif)" }}
                       >
                         {virksomhed.adresse}<br />
@@ -110,7 +108,7 @@ export default function Kontakt() {
                       </p>
                       <a
                         href={`tel:${virksomhed.telefon}`}
-                        className="text-xl text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors link-underline"
+                        className="text-lg text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors link-underline sm:text-xl"
                         style={{ fontFamily: "var(--font-serif)" }}
                       >
                         {virksomhed.telefonDisplay}
@@ -129,7 +127,7 @@ export default function Kontakt() {
                       </p>
                       <ul className="space-y-2">
                         {åbningstider.map((entry) => (
-                          <li key={entry.dage} className="grid grid-cols-2 gap-6 text-sm max-w-xs">
+                          <li key={entry.dage} className="grid grid-cols-2 gap-4 text-sm max-w-xs sm:gap-6">
                             <span className="text-[var(--color-muted)]">{entry.dage}</span>
                             <span className="text-[var(--color-secondary)] font-medium">{entry.tid}</span>
                           </li>

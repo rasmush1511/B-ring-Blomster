@@ -31,8 +31,8 @@ export default function HeroSlideshow() {
 
   return (
     <section
-      className="relative overflow-hidden"
-      style={{ height: "92vh", minHeight: "600px" }}
+      className="relative overflow-hidden w-full"
+      style={{ height: "100dvh", minHeight: "560px" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-label="Forsidebillede — billedgalleri af sæsonens planter"
@@ -59,48 +59,48 @@ export default function HeroSlideshow() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Gradient overlay: stærk i bunden, let i toppen */}
+      {/* Gradient overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to top, rgba(13,31,20,0.82) 0%, rgba(13,31,20,0.30) 45%, rgba(13,31,20,0.10) 100%)",
+            "linear-gradient(to top, rgba(13,31,20,0.85) 0%, rgba(13,31,20,0.35) 45%, rgba(13,31,20,0.15) 100%)",
         }}
       />
 
       {/* Hero-tekst */}
-      <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-16 sm:px-8 sm:pb-18 lg:px-12 lg:pb-20 max-w-7xl mx-auto">
+      <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-14 sm:px-8 sm:pb-16 lg:px-12 lg:pb-20 max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/70">
+          <p className="mb-2 text-xs font-medium uppercase tracking-widest text-white/70 sm:mb-3">
             Båring Bakke · Nordvestfyn
           </p>
           <h1
-            className="mb-5 text-white"
-            style={{ fontFamily: "var(--font-serif)", textShadow: "0 2px 24px rgba(0,0,0,0.3)" }}
+            className="mb-4 text-white sm:mb-5"
+            style={{ textShadow: "0 2px 24px rgba(0,0,0,0.3)" }}
           >
             Blomster
             <br />
             fra bakken
           </h1>
-          <p className="mb-8 text-base text-white/75 leading-relaxed max-w-sm" style={{ maxWidth: "34ch" }}>
+          <p className="mb-6 text-sm text-white/75 leading-relaxed sm:mb-8 sm:text-base" style={{ maxWidth: "34ch" }}>
             Selvbetjeningsbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.
           </p>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3 xs:flex-row xs:flex-wrap sm:flex-row">
             <Link
               href="/kontakt"
-              className="inline-flex h-12 items-center px-7 bg-white text-[var(--color-secondary)] text-sm font-medium hover:bg-[var(--color-accent)] hover:text-[var(--color-secondary)] transition-colors duration-300"
+              className="inline-flex h-12 items-center justify-center px-6 bg-white text-[var(--color-secondary)] text-sm font-medium hover:bg-[var(--color-accent)] hover:text-[var(--color-secondary)] transition-colors duration-300 sm:px-7"
             >
               Find vej til butikken
             </Link>
             <Link
               href="/sortiment"
-              className="inline-flex h-12 items-center px-7 border border-white/60 text-white text-sm hover:border-white hover:bg-white/10 transition-colors duration-300"
+              className="inline-flex h-12 items-center justify-center px-6 border border-white/60 text-white text-sm hover:border-white hover:bg-white/10 transition-colors duration-300 sm:px-7"
             >
               Se sortiment
             </Link>
@@ -109,7 +109,7 @@ export default function HeroSlideshow() {
 
         {/* Navigation-prikker */}
         <div
-          className="absolute bottom-6 right-6 sm:right-8 lg:right-12 flex gap-2"
+          className="absolute bottom-5 right-5 sm:bottom-6 sm:right-8 lg:right-12 flex gap-2"
           role="tablist"
           aria-label="Slide-navigation"
         >

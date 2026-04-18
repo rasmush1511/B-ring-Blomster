@@ -43,9 +43,9 @@ export default function KontaktForm() {
     "w-full border border-[var(--color-ink)]/20 bg-white px-4 py-3 text-sm text-[var(--color-ink)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-primary)] focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] transition-colors";
 
   return (
-    <section className="py-16 lg:py-24 bg-white" aria-labelledby="formular-titel">
+    <section className="py-14 lg:py-24 bg-white" aria-labelledby="formular-titel">
       <Container>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           <FadeIn>
             <h2
               id="formular-titel"

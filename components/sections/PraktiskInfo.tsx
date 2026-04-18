@@ -17,7 +17,7 @@ export default function PraktiskInfo() {
 
       <Container>
         <FadeIn>
-          <div className="inline-block mb-12">
+          <div className="inline-block mb-10 lg:mb-12">
             <h2 id="praktisk-titel" className="text-white">
               Åbningstider & adresse
             </h2>
@@ -57,7 +57,7 @@ export default function PraktiskInfo() {
                 {åbningstider.map((entry) => (
                   <li key={entry.dage} className="flex flex-col">
                     <span className="text-white/50 text-xs">{entry.dage}</span>
-                    <span>{entry.tid}</span>
+                    <span className="text-white">{entry.tid}</span>
                   </li>
                 ))}
               </ul>

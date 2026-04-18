@@ -17,7 +17,7 @@ const layoutMønster: ("wide" | "normal")[] = [
 export default function KategoriGalleri() {
   return (
     <section
-      className="relative overflow-hidden texture-cream section-padding"
+      className="relative overflow-hidden texture-cream py-14 lg:py-20"
       aria-labelledby="kategorier-titel"
     >
       <BotanicalDecor
@@ -28,14 +28,14 @@ export default function KategoriGalleri() {
 
       <Container>
         <FadeIn>
-          <div className="mb-14">
+          <div className="mb-10 lg:mb-14">
             <div className="inline-block">
               <h2 id="kategorier-titel">
                 Hvad finder du hos os
               </h2>
               <RoughUnderline className="mt-2" width="65%" />
             </div>
-            <p className="mt-4 text-[var(--color-muted)] max-w-md text-sm">
+            <p className="mt-3 text-[var(--color-muted)] max-w-md text-sm">
               Sortimentet skifter med sæsonerne — fra de første forårsblomster til efterårslyngen.
             </p>
           </div>

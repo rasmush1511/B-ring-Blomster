@@ -40,9 +40,9 @@ function FAQItem({ spørgsmål, svar, index }: { spørgsmål: string; svar: stri
 
 export default function FAQ() {
   return (
-    <section className="py-16 lg:py-24 texture-cream" aria-labelledby="faq-titel">
+    <section className="py-14 lg:py-24 texture-cream" aria-labelledby="faq-titel">
       <Container>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
           <FadeIn className="lg:col-span-4">
             <div className="inline-block">
               <h2

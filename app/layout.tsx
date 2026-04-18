@@ -110,7 +110,7 @@ export default function RootLayout({
           Gå til indhold
         </a>
         <Header />
-        <main id="main-content" className="pt-16">
+        <main id="main-content">
           {children}
         </main>
         <Footer />

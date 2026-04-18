@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--color-secondary)" }} className="mt-16 lg:mt-24">
       <Container>
-        <div className="grid grid-cols-1 gap-12 py-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-3 lg:gap-8">
 
           {/* Kolonne 1 */}
           <div>

@@ -76,16 +76,13 @@ export default function HeroSlideshow() {
           transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <p className="mb-2 text-xs font-medium uppercase tracking-widest text-white/70 sm:mb-3">
-            Båring Bakke · Nordvestfyn
-          </p>
           <h1
             className="mb-4 text-white sm:mb-5"
             style={{ textShadow: "0 2px 24px rgba(0,0,0,0.3)" }}
           >
             Blomster
             <br />
-            fra bakken
+            på bakken
           </h1>
           <p className="mb-6 text-sm text-white/75 leading-relaxed sm:mb-8 sm:text-base" style={{ maxWidth: "34ch" }}>
             Selvbetjeningsbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.

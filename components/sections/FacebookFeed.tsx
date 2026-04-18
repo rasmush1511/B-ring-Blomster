@@ -11,10 +11,10 @@ export default function FacebookFeed() {
         <SectionDivider variant="flower" className="mb-10 lg:mb-12" />
 
         <FadeIn>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12 items-center">
 
             {/* Venstre: tekst + CTA */}
-            <div>
+            <div className="text-center lg:text-left">
               <h2
                 id="facebook-titel"
                 className="mb-3"
@@ -22,22 +22,24 @@ export default function FacebookFeed() {
               >
                 Følg med på Facebook
               </h2>
-              <p className="text-[var(--color-muted)] leading-relaxed text-sm mb-6 max-w-sm">
+              <p className="text-[var(--color-muted)] leading-relaxed text-sm mb-6 mx-auto lg:mx-0" style={{ maxWidth: "36ch" }}>
                 Vi deler nyankomne planter, åbningstider og sæsonsnyt på Facebook. Det er den hurtigste måde at holde sig opdateret på hvad der er fremme på bakken.
               </p>
-              <a
-                href={virksomhed.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[var(--color-primary)] px-5 py-3 text-sm text-white hover:bg-[var(--color-primary-dark)] transition-colors"
-                aria-label="Gå til Båring Blomsters Facebook-side (åbner i nyt vindue)"
-              >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
-                Besøg vores Facebook-side
-                <ExternalLink size={13} strokeWidth={1.5} aria-hidden="true" />
-              </a>
+              <div className="flex justify-center lg:justify-start">
+                <a
+                  href={virksomhed.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[var(--color-primary)] px-5 py-3 text-sm text-white hover:bg-[var(--color-primary-dark)] transition-colors"
+                  aria-label="Gå til Båring Blomsters Facebook-side (åbner i nyt vindue)"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                  Besøg vores Facebook-side
+                  <ExternalLink size={13} strokeWidth={1.5} aria-hidden="true" />
+                </a>
+              </div>
             </div>
 
             {/* Højre: Facebook Page Plugin */}

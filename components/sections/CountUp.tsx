@@ -87,7 +87,7 @@ export default function CountUp() {
         <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
           {items.map((item, i) => (
             <FadeIn key={item.label} delay={i * 0.1}>
-              <div className="px-4 py-8 sm:py-0 sm:px-6 lg:px-8 text-center sm:text-left first:pt-0 last:pb-0 sm:first:pl-0 sm:last:pr-0">
+              <div className="flex flex-col items-center text-center px-4 py-10 sm:py-8 sm:px-6 lg:px-10">
                 <div
                   className="mb-2 text-5xl font-normal text-white lg:text-6xl"
                   style={{

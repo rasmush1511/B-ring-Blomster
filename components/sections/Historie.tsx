@@ -22,7 +22,7 @@ export default function Historie() {
                 className="font-normal"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                En butik på toppen af bakken
+                En blomsterbutik på toppen af Båring bakke
               </h2>
               <RoughUnderline className="mt-2" width="80%" />
             </div>
@@ -46,7 +46,7 @@ export default function Historie() {
                 className="text-base text-[var(--color-secondary)] font-normal sm:text-lg"
                 style={{ fontFamily: "var(--font-serif)", lineHeight: 1.4 }}
               >
-                "Tag hvad du vil have — betal med MobilePay. Ingen dikkedarer."
+                "Tag hvad du vil have — betal med MobilePay."
               </p>
             </blockquote>
           </FadeIn>

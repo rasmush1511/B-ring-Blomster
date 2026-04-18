@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -80,12 +80,12 @@ export default function HeroSlideshow() {
             className="mb-4 text-white sm:mb-5"
             style={{ textShadow: "0 2px 24px rgba(0,0,0,0.3)" }}
           >
-            Blomster
+            Blomster fra
             <br />
-            på bakken
+            Båring bakke
           </h1>
           <p className="mb-6 text-sm text-white/75 leading-relaxed sm:mb-8 sm:text-base" style={{ maxWidth: "34ch" }}>
-            Selvbetjeningsbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.
+            Selvbetjenings blomsterbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.
           </p>
 
           <div className="flex flex-col gap-3 xs:flex-row xs:flex-wrap sm:flex-row">

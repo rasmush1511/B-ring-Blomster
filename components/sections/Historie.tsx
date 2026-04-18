@@ -22,22 +22,25 @@ export default function Historie() {
                 className="font-normal"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
-                En blomsterbutik på toppen af Båring bakke
+                Blomster fra Båring bakke
               </h2>
               <RoughUnderline className="mt-2" width="80%" />
             </div>
           </FadeIn>
 
           <FadeIn className="lg:col-span-6 lg:col-start-7" delay={0.15}>
-            <div className="space-y-4 text-[var(--color-muted)] leading-relaxed text-sm sm:text-base">
+            <div className="space-y-5 text-[var(--color-muted)] leading-relaxed text-sm sm:text-base">
               <p>
-                Butikken ligger på Middelfartvej 103 — øverst på Båring Bakke med udsigt over Lillebælt. Her er stille om morgenen og vindigt om eftermiddagen, og det kan mærkes i planterne.
+                På toppen af Båring Bakke, lige ved Middelfartvej 103, ligger butikken med udsigt ud over Lillebælt. Her er der stille om morgenen og lidt mere vind op ad dagen – og det er præcis sådan planterne har det bedst.
               </p>
               <p>
-                Det er selvbetjening. Du går selv rundt, vælger det du vil have med hjem, og betaler med MobilePay. Ingen kø, ingen dikkedarer — bare planter og udsigt.
+                Det er en selvbetjenings blomsterbutik.<br />
+                Du går rundt i dit eget tempo, finder det du vil have med hjem, og betaler med MobilePay.<br />
+                Ingen kø, ingen smalltalk hvis du ikke gider – bare planter, luft og ro.
               </p>
               <p>
-                Vi holder åbent fra de første forårsblomster til efteråret lukker havesæsonen ned.
+                Sortimentet følger sæsonen.<br />
+                Vi åbner, når foråret begynder at kunne mærkes, og lukker igen, når haven går i dvale.
               </p>
             </div>
 
@@ -46,7 +49,7 @@ export default function Historie() {
                 className="text-base text-[var(--color-secondary)] font-normal sm:text-lg"
                 style={{ fontFamily: "var(--font-serif)", lineHeight: 1.4 }}
               >
-                "Tag hvad du vil have — betal med MobilePay."
+                Kom forbi – også bare for udsigten.
               </p>
             </blockquote>
           </FadeIn>

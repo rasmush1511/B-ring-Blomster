@@ -56,7 +56,7 @@ export default function Hero() {
             fra bakken
           </h1>
           <p className="mb-8 text-base text-white/75 leading-relaxed max-w-sm">
-            Selvbetjeningsbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.
+            Selvbetjenings blomsterbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.
           </p>
 
           <div className="flex flex-wrap gap-3">

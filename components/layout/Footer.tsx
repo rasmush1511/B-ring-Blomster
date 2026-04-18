@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "var(--color-secondary)" }} className="mt-16 lg:mt-24">
       <Container>
-        <div className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-3 lg:gap-12">
 
           {/* Kolonne 1 */}
           <div>
@@ -18,7 +18,7 @@ export default function Footer() {
               <LogoSvg variant="light" size="md" showTagline />
             </Link>
             <p className="mt-5 text-sm leading-relaxed max-w-[26ch]" style={{ color: "rgba(255,255,255,0.45)" }}>
-              Selvbetjeningsbutik på toppen af Båring Bakke. Åbent fra forår til efterår.
+              Selvbetjenings blomsterbutik på toppen af Båring Bakke. Åbent fra forår til efterår.
             </p>
             <a
               href={virksomhed.facebook}

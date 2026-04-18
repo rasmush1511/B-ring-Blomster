@@ -7,7 +7,7 @@ import Kort from "@/components/sections/Kort";
 import FAQ from "@/components/sections/FAQ";
 import SectionDivider from "@/components/ui/SectionDivider";
 import { virksomhed, åbningstider } from "@/lib/data";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt & find vej",
@@ -15,87 +15,154 @@ export const metadata: Metadata = {
     "Find Båring Blomster på Middelfartvej 103, 5466 Asperup. Ring på 60 12 54 66. Åbent mandag–fredag 10–17, lørdag–søndag 09–15 i sæsonen.",
   openGraph: {
     title: "Kontakt & find vej — Båring Blomster",
-    description:
-      "Åbningstider, adresse og kontaktformular til Båring Blomster på Båring Bakke.",
+    description: "Åbningstider, adresse og kontaktformular til Båring Blomster på Båring Bakke.",
   },
 };
 
 export default function Kontakt() {
   return (
     <>
-      {/* Mini-hero */}
-      <section className="pt-16 pb-12 bg-[var(--color-primary)]" aria-labelledby="kontakt-titel">
+      {/* Hero */}
+      <section className="pt-[62px] bg-[var(--color-primary)]" aria-labelledby="kontakt-titel">
         <Container>
-          <FadeIn className="pt-12">
-            <div className="inline-block mb-4">
-              <h1
-                id="kontakt-titel"
-                className="text-3xl font-normal text-white sm:text-4xl lg:text-5xl"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                Kontakt & find vej
-              </h1>
-              <RoughUnderline className="mt-2" width="50%" />
-            </div>
-            <p className="text-white/65 max-w-md leading-relaxed text-sm mt-2">
-              Vi er på toppen af Båring Bakke. Kend vejen — og kom forbi.
-            </p>
-          </FadeIn>
+          <div className="py-16 lg:py-20">
+            <FadeIn>
+              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-[var(--color-accent)]/80">
+                Middelfartvej 103 · 5466 Asperup
+              </p>
+              <div className="inline-block mb-5">
+                <h1 id="kontakt-titel" className="text-white">
+                  Kontakt &<br />find vej
+                </h1>
+                <RoughUnderline className="mt-2" width="45%" />
+              </div>
+              <p className="text-white/60 max-w-sm leading-relaxed text-sm">
+                Vi er på toppen af Båring Bakke — ca. 5 minutter fra Middelfart.
+              </p>
+            </FadeIn>
+          </div>
         </Container>
       </section>
 
-      {/* Kontaktinfo */}
-      <section className="py-14 texture-white" aria-labelledby="kontaktinfo-titel">
+      {/* Find vej — fremhævet som destinationssektion */}
+      <section className="py-14 lg:py-20 texture-white" aria-labelledby="findvej-titel">
         <Container>
           <FadeIn>
-            <h2 id="kontaktinfo-titel" className="sr-only">Kontaktoplysninger</h2>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2 text-[var(--color-accent)]">
-                  <MapPin size={20} strokeWidth={1.5} aria-hidden="true" />
-                  <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)]">Adresse</span>
-                </div>
-                <address className="not-italic text-[var(--color-secondary)] text-lg leading-snug" style={{ fontFamily: "var(--font-serif)" }}>
-                  {virksomhed.adresse}<br />
-                  {virksomhed.postnummer} {virksomhed.by}
-                </address>
-              </div>
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+              {/* Kontaktinfo — stor og læselig */}
+              <div className="lg:col-span-5">
+                <h2 id="findvej-titel" className="mb-8">
+                  Kom forbi
+                </h2>
 
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <Phone size={20} strokeWidth={1.5} className="text-[var(--color-accent)]" aria-hidden="true" />
-                  <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)]">Telefon</span>
-                </div>
-                <a
-                  href={`tel:${virksomhed.telefon}`}
-                  className="text-[var(--color-secondary)] text-lg hover:text-[var(--color-primary)] transition-colors link-underline"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  {virksomhed.telefonDisplay}
-                </a>
-              </div>
+                <ul className="space-y-7">
+                  {/* Adresse — primær handling */}
+                  <li>
+                    <div className="flex items-start gap-4">
+                      <span
+                        className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center"
+                        style={{ backgroundColor: "var(--color-accent)", color: "var(--color-secondary)" }}
+                        aria-hidden="true"
+                      >
+                        <Navigation size={16} strokeWidth={2} />
+                      </span>
+                      <div>
+                        <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-1.5">Adresse</p>
+                        <address
+                          className="not-italic text-xl leading-snug text-[var(--color-secondary)]"
+                          style={{ fontFamily: "var(--font-serif)" }}
+                        >
+                          {virksomhed.adresse}<br />
+                          {virksomhed.postnummer} {virksomhed.by}
+                        </address>
+                        <a
+                          href={`https://maps.google.com/?q=${virksomhed.adresse},${virksomhed.postnummer}+${virksomhed.by}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-secondary)] transition-colors link-underline"
+                          aria-label="Åbn rute i Google Maps (nyt vindue)"
+                        >
+                          <MapPin size={13} strokeWidth={1.5} />
+                          Åbn i Google Maps
+                        </a>
+                      </div>
+                    </div>
+                  </li>
 
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-2">
-                  <Clock size={20} strokeWidth={1.5} className="text-[var(--color-accent)]" aria-hidden="true" />
-                  <span className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)]">Åbningstider</span>
-                </div>
-                <ul className="space-y-2">
-                  {åbningstider.map((entry) => (
-                    <li key={entry.dage} className="text-[var(--color-ink)]">
-                      <span className="text-xs text-[var(--color-muted)] block">{entry.dage}</span>
-                      <span className="text-lg" style={{ fontFamily: "var(--font-serif)" }}>{entry.tid}</span>
-                    </li>
-                  ))}
+                  {/* Telefon */}
+                  <li>
+                    <div className="flex items-start gap-4">
+                      <span
+                        className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-[var(--color-secondary)]/15"
+                        style={{ color: "var(--color-primary)" }}
+                        aria-hidden="true"
+                      >
+                        <Phone size={15} strokeWidth={1.5} />
+                      </span>
+                      <div>
+                        <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-1.5">Telefon</p>
+                        <a
+                          href={`tel:${virksomhed.telefon}`}
+                          className="text-xl text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors link-underline"
+                          style={{ fontFamily: "var(--font-serif)" }}
+                        >
+                          {virksomhed.telefonDisplay}
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+
+                  {/* Åbningstider */}
+                  <li>
+                    <div className="flex items-start gap-4">
+                      <span
+                        className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-[var(--color-secondary)]/15"
+                        style={{ color: "var(--color-primary)" }}
+                        aria-hidden="true"
+                      >
+                        <Clock size={15} strokeWidth={1.5} />
+                      </span>
+                      <div>
+                        <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-3">Åbningstider</p>
+                        <ul className="space-y-2.5">
+                          {åbningstider.map((entry) => (
+                            <li key={entry.dage} className="grid grid-cols-2 gap-4 text-sm max-w-xs">
+                              <span className="text-[var(--color-muted)]">{entry.dage}</span>
+                              <span className="text-[var(--color-secondary)] font-medium">{entry.tid}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="mt-3 text-xs text-[var(--color-muted)]">Sæson: {virksomhed.sæson}</p>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
-                <p className="text-xs text-[var(--color-muted)]">Sæson: {virksomhed.sæson}</p>
+              </div>
+
+              {/* Kort */}
+              <div className="lg:col-span-7">
+                <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+                  <iframe
+                    title="Båring Blomster på Google Maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2255.0!2d9.9833!3d55.5167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c9e3c4b5d7c6f%3A0x1234567890abcdef!2sMiddelfartvej%20103%2C%205466%20Asperup!5e0!3m2!1sda!2sdk!4v1699999999999"
+                    width="100%"
+                    height="100%"
+                    className="absolute inset-0 border-0"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    aria-label="Google Maps med markering på Middelfartvej 103, 5466 Asperup"
+                  />
+                </div>
+                <p className="mt-3 text-xs text-[var(--color-muted)]">
+                  Middelfartvej 103, 5466 Asperup — øverst på Båring Bakke
+                </p>
               </div>
             </div>
           </FadeIn>
         </Container>
       </section>
 
-      <Kort />
       <SectionDivider variant="flower" className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12" />
       <KontaktForm />
       <FAQ />

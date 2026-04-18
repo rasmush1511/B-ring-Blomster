@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Button from "@/components/ui/Button";
-import RoughUnderline from "@/components/ui/RoughUnderline";
+import Link from "next/link";
 import { heroBillede } from "@/lib/images";
 
 export default function Hero() {
@@ -13,49 +12,67 @@ export default function Hero() {
     target: containerRef,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
 
   return (
     <section
       ref={containerRef}
-      className="relative h-[88vh] min-h-[560px] overflow-hidden"
+      className="relative overflow-hidden"
+      style={{ height: "92vh", minHeight: "600px" }}
       aria-label="Forsidebillede"
     >
+      {/* Parallax-billede */}
       <motion.div className="absolute inset-0 will-change-transform" style={{ y }}>
         <Image
           src={heroBillede.url}
           alt={heroBillede.alt}
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
           sizes="100vw"
+          quality={90}
         />
-        <div className="absolute inset-0 bg-[var(--color-ink)]/35" />
+        {/* Gradient fra bund: giver kontrast til tekst uden at ødelægge billedet */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1f14]/75 via-[#0d1f14]/20 to-transparent" />
       </motion.div>
 
-      <div className="relative z-10 flex h-full flex-col items-start justify-end pb-16 px-5 sm:px-8 lg:px-12 max-w-7xl mx-auto">
+      {/* Indhold — placeret i bund-venstre */}
+      <div className="relative z-10 flex h-full flex-col justify-end px-5 pb-14 sm:px-8 sm:pb-16 lg:px-12 lg:pb-20 max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-2xl"
         >
-          <h1
-            className="mb-2 text-4xl font-normal text-white sm:text-5xl lg:text-6xl max-w-xl"
-            style={{ fontFamily: "var(--font-serif)", letterSpacing: "-0.02em", lineHeight: 1.1 }}
-          >
-            Blomster fra bakken
-          </h1>
-          <RoughUnderline className="mb-6" width={260} />
-          <p className="mb-8 text-base text-white/75 max-w-sm leading-relaxed">
-            Selvbetjeningsbutik på Båring Bakke — åben fra forår til efterår.
+          <p className="mb-3 text-xs font-medium uppercase tracking-widest text-[var(--color-accent)]/90">
+            Båring Bakke · Nordvestfyn
           </p>
-          <Button
-            href="/kontakt"
-            variant="outline"
-            className="border-white/70 text-white hover:bg-white hover:text-[var(--color-ink)]"
+          <h1
+            className="mb-5 text-white"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.25)" }}
           >
-            Find vej til butikken
-          </Button>
+            Blomster
+            <br />
+            fra bakken
+          </h1>
+          <p className="mb-8 text-base text-white/75 leading-relaxed max-w-sm">
+            Selvbetjeningsbutik åben fra marts til oktober. Tag hvad du vil have — betal med MobilePay.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/kontakt"
+              className="inline-flex h-12 items-center px-7 bg-white text-[var(--color-secondary)] text-sm font-medium hover:bg-[var(--color-accent)] hover:text-[var(--color-secondary)] transition-colors duration-300"
+            >
+              Find vej til butikken
+            </Link>
+            <Link
+              href="/sortiment"
+              className="inline-flex h-12 items-center px-7 border border-white/50 text-white text-sm hover:border-white hover:bg-white/10 transition-colors duration-300"
+            >
+              Se sortiment
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

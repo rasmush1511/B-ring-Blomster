@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import Historie from "@/components/sections/Historie";
 import Slideshow from "@/components/sections/Slideshow";
+import CountUp from "@/components/sections/CountUp";
 import PraktiskInfo from "@/components/sections/PraktiskInfo";
 import FacebookFeed from "@/components/sections/FacebookFeed";
 import Container from "@/components/ui/Container";
@@ -26,19 +27,13 @@ export default function Forside() {
       <Hero />
       <Historie />
 
-      {/* Slideshow-sektion: "Lige nu på bakken" */}
-      <section aria-labelledby="slideshow-titel" className="py-12 lg:py-16 texture-white">
+      {/* Slideshow */}
+      <section aria-labelledby="slideshow-titel" className="py-14 lg:py-20 texture-white">
         <Container>
           <FadeIn>
-            <div className="mb-8 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-              <h2
-                id="slideshow-titel"
-                className="text-2xl font-normal sm:text-3xl"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                Lige nu på bakken
-              </h2>
-              <p className="text-sm text-[var(--color-muted)] sm:text-right max-w-xs">
+            <div className="mb-10 flex flex-col gap-1.5 sm:flex-row sm:items-end sm:justify-between">
+              <h2 id="slideshow-titel">Lige nu på bakken</h2>
+              <p className="text-sm text-[var(--color-muted)] sm:text-right max-w-xs pb-1">
                 Forårets første farver er fremme
               </p>
             </div>
@@ -47,7 +42,13 @@ export default function Forside() {
         <Slideshow billeder={slideshowBilleder} interval={5500} />
       </section>
 
-      <SectionDivider variant="flower" className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12" />
+      {/* CountUp */}
+      <CountUp />
+
+      <SectionDivider
+        variant="flower"
+        className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-6"
+      />
 
       <PraktiskInfo />
       <FacebookFeed />

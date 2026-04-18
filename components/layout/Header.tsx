@@ -16,33 +16,36 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-primary)] shadow-sm">
+    <header
+      className="fixed top-0 left-0 right-0 z-50"
+      style={{ backgroundColor: "var(--color-primary)" }}
+    >
       <Container>
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-[62px] items-center justify-between">
           <Link
             href="/"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-primary)]"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-primary)] rounded-sm"
             aria-label="Båring Blomster — gå til forsiden"
           >
             <LogoSvg variant="light" size="md" />
           </Link>
 
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Hovednavigation">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-7" aria-label="Hovednavigation">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm transition-colors ${
+                className={`relative text-sm tracking-wide transition-colors duration-200 ${
                   pathname === link.href
                     ? "text-[var(--color-accent)]"
-                    : "text-white/85 hover:text-white"
+                    : "text-white/80 hover:text-white"
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
                   <span
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[var(--color-accent)]"
+                    className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-[var(--color-accent)]"
                     aria-hidden="true"
                   />
                 )}

@@ -39,7 +39,7 @@ export default function Header() {
                 className={`relative text-sm tracking-wide transition-colors duration-200 ${
                   pathname === link.href
                     ? "text-[var(--color-accent)]"
-                    : "text-white/80 hover:text-white"
+                    : "text-white hover:text-white/80"
                 }`}
               >
                 {link.label}

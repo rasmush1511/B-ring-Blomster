@@ -3,11 +3,10 @@ import Container from "@/components/ui/Container";
 import FadeIn from "@/components/ui/FadeIn";
 import RoughUnderline from "@/components/ui/RoughUnderline";
 import KontaktForm from "@/components/sections/KontaktForm";
-import Kort from "@/components/sections/Kort";
 import FAQ from "@/components/sections/FAQ";
 import SectionDivider from "@/components/ui/SectionDivider";
 import { virksomhed, åbningstider } from "@/lib/data";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt & find vej",
@@ -19,24 +18,40 @@ export const metadata: Metadata = {
   },
 };
 
+// Delt stil for alle ikon-bokse — ensartet orange farve og størrelse
+const iconBoxStyle: React.CSSProperties = {
+  backgroundColor: "var(--color-accent)",
+  color: "var(--color-secondary)",
+  flexShrink: 0,
+  width: 36,
+  height: 36,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
 export default function Kontakt() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-[62px] bg-[var(--color-primary)]" aria-labelledby="kontakt-titel">
+      <section
+        className="pt-[62px]"
+        style={{ backgroundColor: "var(--color-primary)" }}
+        aria-labelledby="kontakt-titel"
+      >
         <Container>
           <div className="py-16 lg:py-20">
             <FadeIn>
-              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-[var(--color-accent)]/80">
+              <p className="mb-3 text-xs font-medium uppercase tracking-widest text-white/60">
                 Middelfartvej 103 · 5466 Asperup
               </p>
-              <div className="inline-block mb-5">
+              <div className="inline-block mb-4">
                 <h1 id="kontakt-titel" className="text-white">
                   Kontakt &<br />find vej
                 </h1>
                 <RoughUnderline className="mt-2" width="45%" />
               </div>
-              <p className="text-white/60 max-w-sm leading-relaxed text-sm">
+              <p className="text-white/65 max-w-sm leading-relaxed text-sm mt-2">
                 Vi er på toppen af Båring Bakke — ca. 5 minutter fra Middelfart.
               </p>
             </FadeIn>
@@ -44,102 +59,90 @@ export default function Kontakt() {
         </Container>
       </section>
 
-      {/* Find vej — fremhævet som destinationssektion */}
+      {/* Kontaktinfo + kort */}
       <section className="py-14 lg:py-20 texture-white" aria-labelledby="findvej-titel">
         <Container>
           <FadeIn>
-            <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-              {/* Kontaktinfo — stor og læselig */}
-              <div className="lg:col-span-5">
-                <h2 id="findvej-titel" className="mb-8">
-                  Kom forbi
-                </h2>
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
 
-                <ul className="space-y-7">
-                  {/* Adresse — primær handling */}
-                  <li>
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center"
-                        style={{ backgroundColor: "var(--color-accent)", color: "var(--color-secondary)" }}
-                        aria-hidden="true"
+              {/* Venstre: kontaktinfo */}
+              <div className="lg:col-span-5">
+                <h2 id="findvej-titel" className="mb-10">Kom forbi</h2>
+
+                {/* Alle tre rækker med nøjagtig samme struktur og ikonboks */}
+                <ul className="space-y-8">
+
+                  {/* Adresse */}
+                  <li className="flex items-start gap-4">
+                    <span style={iconBoxStyle} aria-hidden="true">
+                      <MapPin size={16} strokeWidth={2} />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-2">
+                        Adresse
+                      </p>
+                      <address
+                        className="not-italic text-xl leading-snug text-[var(--color-secondary)]"
+                        style={{ fontFamily: "var(--font-serif)" }}
                       >
-                        <Navigation size={16} strokeWidth={2} />
-                      </span>
-                      <div>
-                        <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-1.5">Adresse</p>
-                        <address
-                          className="not-italic text-xl leading-snug text-[var(--color-secondary)]"
-                          style={{ fontFamily: "var(--font-serif)" }}
-                        >
-                          {virksomhed.adresse}<br />
-                          {virksomhed.postnummer} {virksomhed.by}
-                        </address>
-                        <a
-                          href={`https://maps.google.com/?q=${virksomhed.adresse},${virksomhed.postnummer}+${virksomhed.by}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-secondary)] transition-colors link-underline"
-                          aria-label="Åbn rute i Google Maps (nyt vindue)"
-                        >
-                          <MapPin size={13} strokeWidth={1.5} />
-                          Åbn i Google Maps
-                        </a>
-                      </div>
+                        {virksomhed.adresse}<br />
+                        {virksomhed.postnummer} {virksomhed.by}
+                      </address>
+                      <a
+                        href={`https://maps.google.com/?q=${virksomhed.adresse},${virksomhed.postnummer}+${virksomhed.by}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-block text-sm text-[var(--color-primary)] hover:text-[var(--color-secondary)] transition-colors link-underline"
+                      >
+                        Åbn i Google Maps
+                      </a>
                     </div>
                   </li>
 
                   {/* Telefon */}
-                  <li>
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-[var(--color-secondary)]/15"
-                        style={{ color: "var(--color-primary)" }}
-                        aria-hidden="true"
+                  <li className="flex items-start gap-4">
+                    <span style={iconBoxStyle} aria-hidden="true">
+                      <Phone size={16} strokeWidth={2} />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-2">
+                        Telefon
+                      </p>
+                      <a
+                        href={`tel:${virksomhed.telefon}`}
+                        className="text-xl text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors link-underline"
+                        style={{ fontFamily: "var(--font-serif)" }}
                       >
-                        <Phone size={15} strokeWidth={1.5} />
-                      </span>
-                      <div>
-                        <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-1.5">Telefon</p>
-                        <a
-                          href={`tel:${virksomhed.telefon}`}
-                          className="text-xl text-[var(--color-secondary)] hover:text-[var(--color-primary)] transition-colors link-underline"
-                          style={{ fontFamily: "var(--font-serif)" }}
-                        >
-                          {virksomhed.telefonDisplay}
-                        </a>
-                      </div>
+                        {virksomhed.telefonDisplay}
+                      </a>
                     </div>
                   </li>
 
                   {/* Åbningstider */}
-                  <li>
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-[var(--color-secondary)]/15"
-                        style={{ color: "var(--color-primary)" }}
-                        aria-hidden="true"
-                      >
-                        <Clock size={15} strokeWidth={1.5} />
-                      </span>
-                      <div>
-                        <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-3">Åbningstider</p>
-                        <ul className="space-y-2.5">
-                          {åbningstider.map((entry) => (
-                            <li key={entry.dage} className="grid grid-cols-2 gap-4 text-sm max-w-xs">
-                              <span className="text-[var(--color-muted)]">{entry.dage}</span>
-                              <span className="text-[var(--color-secondary)] font-medium">{entry.tid}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        <p className="mt-3 text-xs text-[var(--color-muted)]">Sæson: {virksomhed.sæson}</p>
-                      </div>
+                  <li className="flex items-start gap-4">
+                    <span style={iconBoxStyle} aria-hidden="true">
+                      <Clock size={16} strokeWidth={2} />
+                    </span>
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-widest text-[var(--color-muted)] mb-2">
+                        Åbningstider
+                      </p>
+                      <ul className="space-y-2">
+                        {åbningstider.map((entry) => (
+                          <li key={entry.dage} className="grid grid-cols-2 gap-6 text-sm max-w-xs">
+                            <span className="text-[var(--color-muted)]">{entry.dage}</span>
+                            <span className="text-[var(--color-secondary)] font-medium">{entry.tid}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="mt-2 text-xs text-[var(--color-muted)]">Sæson: {virksomhed.sæson}</p>
                     </div>
                   </li>
+
                 </ul>
               </div>
 
-              {/* Kort */}
+              {/* Højre: kort */}
               <div className="lg:col-span-7">
                 <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
                   <iframe
@@ -158,6 +161,7 @@ export default function Kontakt() {
                   Middelfartvej 103, 5466 Asperup — øverst på Båring Bakke
                 </p>
               </div>
+
             </div>
           </FadeIn>
         </Container>

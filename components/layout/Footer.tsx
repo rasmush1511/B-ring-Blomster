@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
 
           {/* Kolonne 3: Find vej — højrestillet, tekst flugter med dividerens højre kant */}
-          <div className="lg:text-right">
+          <div className="lg:flex lg:flex-col lg:items-end">
             <h3
               className="mb-5 text-xs font-medium uppercase tracking-widest"
               style={{ color: "var(--color-accent)", fontFamily: "var(--font-sans)", letterSpacing: "0.12em" }}
@@ -69,12 +69,12 @@ export default function Footer() {
                   href={`https://maps.google.com/?q=${virksomhed.adresse},${virksomhed.postnummer}+${virksomhed.by}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2.5 lg:justify-end transition-colors duration-200"
+                  className="flex items-start gap-2.5 transition-colors duration-200"
                   style={{ color: "rgba(255,255,255,0.55)" }}
                   aria-label="Åbn adresse i Google Maps"
                 >
                   <MapPin size={14} strokeWidth={1.5} className="mt-0.5 shrink-0" />
-                  <span className="lg:text-right">
+                  <span>
                     {virksomhed.adresse}<br />
                     {virksomhed.postnummer} {virksomhed.by}
                   </span>
@@ -83,14 +83,14 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${virksomhed.telefon}`}
-                  className="flex items-center gap-2.5 lg:justify-end transition-colors duration-200"
+                  className="flex items-center gap-2.5 transition-colors duration-200"
                   style={{ color: "rgba(255,255,255,0.55)" }}
                 >
                   <Phone size={14} strokeWidth={1.5} />
                   {virksomhed.telefonDisplay}
                 </a>
               </li>
-              <li className="flex items-center gap-2.5 lg:justify-end" style={{ color: "rgba(255,255,255,0.45)" }}>
+              <li className="flex items-center gap-2.5" style={{ color: "rgba(255,255,255,0.45)" }}>
                 <Clock size={14} strokeWidth={1.5} />
                 Betaling via MobilePay
               </li>

@@ -34,8 +34,8 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Kolonne 2: Åbningstider — justify-between fylder kolonnebredden */}
-          <div>
+          {/* Kolonne 2: Åbningstider — centreret i kolonnen */}
+          <div className="lg:w-fit lg:mx-auto">
             <h3
               className="mb-5 text-xs font-medium uppercase tracking-widest"
               style={{ color: "var(--color-accent)", fontFamily: "var(--font-sans)", letterSpacing: "0.12em" }}

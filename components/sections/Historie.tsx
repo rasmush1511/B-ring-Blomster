@@ -31,16 +31,19 @@ export default function Historie() {
           <FadeIn className="lg:col-span-6 lg:col-start-7" delay={0.15}>
             <div className="space-y-5 text-[var(--color-muted)] leading-relaxed text-sm sm:text-base">
               <p>
-                På toppen af Båring Bakke, lige ved Middelfartvej 103, ligger butikken med udsigt ud over Lillebælt. Her er der stille om morgenen og lidt mere vind op ad dagen – og det er præcis sådan planterne har det bedst.
+                På toppen af Båring Bakke ved Middelfartvej 103 ligger vores lille havecenter – med udsigt over Lillebælt.
+                Om morgenen er der helt stille, og senere på dagen blæser det lidt mere. Det passer planterne ret godt.
               </p>
               <p>
-                Det er en selvbetjenings blomsterbutik.<br />
-                Du går rundt i dit eget tempo, finder det du vil have med hjem, og betaler med MobilePay.<br />
-                Ingen kø, ingen smalltalk hvis du ikke gider – bare planter, luft og ro.
+                Det er en selvbetjeningsbutik.<br />
+                Du går bare rundt, finder det du vil have, og betaler med MobilePay.
               </p>
               <p>
-                Sortimentet følger sæsonen.<br />
-                Vi åbner, når foråret begynder at kunne mærkes, og lukker igen, når haven går i dvale.
+                Ingen kø. Du klarer det hele i dit eget tempo.
+              </p>
+              <p>
+                Udvalget skifter med sæsonen.<br />
+                Vi åbner, når foråret sådan rigtigt er i gang, og lukker igen, når haven går i dvale.
               </p>
             </div>
 
@@ -49,7 +52,7 @@ export default function Historie() {
                 className="text-base text-[var(--color-secondary)] font-normal sm:text-lg"
                 style={{ fontFamily: "var(--font-serif)", lineHeight: 1.4 }}
               >
-                Kom forbi – også bare for udsigten.
+                Du er velkommen til at kigge forbi – også bare for udsigten.
               </p>
             </blockquote>
           </FadeIn>

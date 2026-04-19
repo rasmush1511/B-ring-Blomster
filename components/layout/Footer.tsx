@@ -56,7 +56,8 @@ export default function Footer() {
           </div>
 
           {/* Kolonne 3: Find vej — højrestillet, tekst flugter med dividerens højre kant */}
-          <div className="lg:flex lg:flex-col lg:items-end">
+          <div className="lg:flex lg:justify-end">
+          <div>
             <h3
               className="mb-5 text-xs font-medium uppercase tracking-widest"
               style={{ color: "var(--color-accent)", fontFamily: "var(--font-sans)", letterSpacing: "0.12em" }}
@@ -95,6 +96,7 @@ export default function Footer() {
                 Betaling via MobilePay
               </li>
             </ul>
+          </div>
           </div>
 
         </div>
